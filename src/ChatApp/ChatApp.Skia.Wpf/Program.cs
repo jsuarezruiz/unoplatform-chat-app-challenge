@@ -1,0 +1,3 @@
+﻿namespace ChatApp.Skia.Gtk
+{
+}

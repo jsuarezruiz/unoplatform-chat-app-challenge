@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>6279c845-92f8-4333-ab99-3d213163593c</ProjectGuid>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.props" />
+  <PropertyGroup />
+  <Import Project="ChatApp.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
+  <ItemGroup>
+    <_Globbed_Compile Remove="Converters\ColorToBrushConverter.cs" />
+    <_Globbed_Compile Remove="Models\Message.cs" />
+    <_Globbed_Compile Remove="Models\User.cs" />
+    <_Globbed_Compile Remove="Services\DialogService.cs" />
+    <_Globbed_Compile Remove="Services\MessageService.cs" />
+    <_Globbed_Compile Remove="Services\NavigationService.cs" />
+    <_Globbed_Compile Remove="Views\DetailView.xaml.cs" />
+    <_Globbed_Compile Remove="Views\HomeView.xaml.cs" />
+    <_Globbed_Compile Remove="Views\Templates\CustomControl1.cs" />
+    <_Globbed_Compile Remove="Views\Templates\SuggestedItemTemplate.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <_Globbed_Content Remove="Assets\emoji1.png" />
+    <_Globbed_Content Remove="Assets\emoji10.png" />
+    <_Globbed_Content Remove="Assets\emoji2.png" />
+    <_Globbed_Content Remove="Assets\emoji3.png" />
+    <_Globbed_Content Remove="Assets\emoji4.png" />
+    <_Globbed_Content Remove="Assets\emoji5.png" />
+    <_Globbed_Content Remove="Assets\emoji6.png" />
+    <_Globbed_Content Remove="Assets\emoji7.png" />
+    <_Globbed_Content Remove="Assets\emoji8.png" />
+    <_Globbed_Content Remove="Assets\emoji9.png" />
+    <_Globbed_Content Remove="Assets\Fonts\MaterialIcons-Regular.ttf" />
+    <_Globbed_Content Remove="Assets\Fonts\Metropolis-Black.otf" />
+    <_Globbed_Content Remove="Assets\Fonts\Metropolis-Light.otf" />
+    <_Globbed_Content Remove="Assets\Fonts\Metropolis-Medium.otf" />
+    <_Globbed_Content Remove="Assets\Fonts\Metropolis-Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <_Globbled_Page Remove="Views\DetailView.xaml" />
+    <_Globbled_Page Remove="Views\HomeView.xaml" />
+    <_Globbled_Page Remove="Views\Templates\SuggestedItemTemplate.xaml" />
+  </ItemGroup>
+</Project>

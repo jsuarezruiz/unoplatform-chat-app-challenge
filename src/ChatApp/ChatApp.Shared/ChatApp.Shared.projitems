@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6279c845-92f8-4333-ab99-3d213163593c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ChatApp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MessageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--
+		 Add files present in the shared project folder, excluding the ones
+		 explicitly included in the projitem, so files can be added from vscode
+		 without manipulating the projitem file.
+	-->
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji10.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji2.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji3.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji4.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji5.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji6.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji7.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji8.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\emoji9.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fonts\Metropolis-Black.otf" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fonts\Metropolis-Light.otf" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fonts\Metropolis-Medium.otf" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Fonts\Metropolis-Regular.otf" />
+    <_Globbled_Page Include="$(MSBuildThisFileDirectory)**/*.xaml" Exclude="@(Page);@(ApplicationDefinition)">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </_Globbled_Page>
+    <Page Include="@(_Globbled_Page)" />
+    <_Globbed_Compile Include="$(MSBuildThisFileDirectory)**/*.xaml.cs" Exclude="@(Compile)">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </_Globbed_Compile>
+    <_Globbed_Compile Include="$(MSBuildThisFileDirectory)**/*.cs" Exclude="@(Compile);@(_Globbed_Compile)" />
+    <_Globbed_PRIResource Include="$(MSBuildThisFileDirectory)**/*.resw" Exclude="@(PRIResource)" />
+    <PRIResource Include="@(_Globbed_PRIResource)" />
+    <_Globbed_Content Include="$(MSBuildThisFileDirectory)Assets/**/*.*" Exclude="@(Content)" />
+    <Content Include="@(_Globbed_Content)" />
+  </ItemGroup>
+</Project>

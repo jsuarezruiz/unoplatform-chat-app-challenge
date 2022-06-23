@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ChatApp.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
